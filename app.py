@@ -83,8 +83,9 @@ Scribe helps you ask sharp questions and surfaces the most relevant answers from
 st.markdown('</div>', unsafe_allow_html=True)
 
 # Use CPU explicitly and avoid meta tensor issues
-embedder = SentenceTransformer('all-MiniLM-L6-v2', device='cpu')
-
+# Force CPU for Torch and avoid meta tensor errors
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
+embedder = SentenceTransformer('all-MiniLM-L6-v2')
 mode = st.radio("Choose an option:", ["Review Sample", "Try it Yourself"], horizontal=True)
 
 if mode == "Review Sample":
