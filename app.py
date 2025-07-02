@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import os
 from sentence_transformers import SentenceTransformer, util
 import torch
 
