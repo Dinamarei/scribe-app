@@ -2,7 +2,6 @@ import streamlit as st
 from utils.styles import apply_dark_theme
 from utils.model import load_embedder, find_top_reviews
 from utils.data import load_uploaded_data
-import os
 
 def app():
     page = st.query_params["page"]
